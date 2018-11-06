@@ -130,6 +130,9 @@ class Client(object):
         data['party'].update(embed)
         return self._post('/parties', **data)
 
+    def get_organisation(self, partyId):
+        return self._get('/parties/'+partyId+'?embed=tags,fields')
+
     def create_organisation(self, embed):
         """Returns the created organisation.
         Args:
